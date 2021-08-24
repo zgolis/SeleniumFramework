@@ -16,6 +16,11 @@
             this.contactUs = new ContactUsPageElements(this.Driver);
         }
 
+        /// <summary>
+        /// Adds user info to the Contact Us form.
+        /// </summary>
+        /// <param name="info">The user info to add.</param>
+        /// <returns>The current page actions.</returns>
         public ContactUsPageActions AddUserInfo(UserInfo info)
         {
             this.contactUs.InputFirstName.SendKeys(info.FirstName);
@@ -35,6 +40,11 @@
             return this;
         }
 
+        /// <summary>
+        /// Verifies the User info is set correctly.
+        /// </summary>
+        /// <param name="info">The user info to add.</param>
+        /// <returns>The current page actions.</returns>
         public ContactUsPageActions VerifyUserInfo(UserInfo info)
         {
             Assert.AreEqual(info.FirstName, this.contactUs.InputFirstName.Value());

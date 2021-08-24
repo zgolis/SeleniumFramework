@@ -4,6 +4,10 @@ namespace SeleniumFramework.Helpers
 
     public class DriverFactory
     {
+        /// <summary>
+        /// Gets a maximized chrome driver.
+        /// </summary>
+        /// <returns>A Chrome Driver.</returns>
         public static ChromeDriver Driver()
         {
             ChromeOptions options = new ChromeOptions();

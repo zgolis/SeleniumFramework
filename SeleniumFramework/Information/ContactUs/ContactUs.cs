@@ -40,6 +40,9 @@
             Minnesota,
         }
 
+        /// <summary>
+        /// Gets Generic User info.
+        /// </summary>
         public static UserInfo TestUser => new UserInfo(
             firstName: "Test",
             lastName: "Random",
@@ -50,6 +53,9 @@
             state: StateOptions.California,
             zip: "12345");
 
+        /// <summary>
+        /// A struct of User Info.
+        /// </summary>
         public struct UserInfo
         {
             public string FirstName;

@@ -65,9 +65,21 @@
             }
         }
 
+        /// <summary>
+        /// Waits for the current page to complete loading.
+        /// </summary>
+        /// <param name="driver">The current driver.</param>
         public static void WaitForPageLoad(this IWebDriver driver) =>
             WaitFor(driver, (driver) => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
 
+        /// <summary>
+        /// Waits for some condition to be true or a specific time has elapsed.
+        /// </summary>
+        /// <param name="driver">The current driver.</param>
+        /// <param name="waitOn">The condition to wait to be true.</param>
+        /// <param name="timeout">The time until the wait timesout.</param>
+        /// <param name="pollingInterval">The polling interval to check for the condition to be true.</param>
+        /// <param name="errorMessage">A custome error message to output if the wait was unsuccessful.</param>
         public static void WaitFor(this IWebDriver driver, Func<IWebDriver, bool> waitOn, double timeout = 5, double pollingInterval = 0.5, string errorMessage = null)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout))
