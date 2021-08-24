@@ -27,6 +27,8 @@
         [TestMethod]
         public void ContactUs_Required()
         {
+            Driver.WaitForPageLoad();
+            this.contactUs.Elements.EachItemDisplays();
             this.contactUs.RequiredElements.EachItemIsRequired();
 
             Assert.IsTrue(
@@ -45,6 +47,7 @@
         [TestMethod]
         public void ContactUs_Validate()
         {
+            Driver.WaitForPageLoad();
             this.contactUs.Elements.EachItemDisplays();
 
             CollectionAssert.AreEqual(
@@ -59,6 +62,7 @@
         [TestMethod]
         public void ContactUs_Verify()
         {
+            Driver.WaitForPageLoad();
             var testUser = TestUser;
 
             this.contactUsActions
